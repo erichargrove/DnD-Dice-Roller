@@ -46,7 +46,7 @@ while(True):
     print("Want to attack? (y/n)")
     prompt = input()
 
-    if(prompt == 'yes' or prompt == 'y'):
+    if(prompt == 'yes' or prompt == 'y' or prompt == "Y"):
         initRoll = random.randint(1, d20)
         print("d20 roll = " + str(initRoll))
 
@@ -66,12 +66,12 @@ while(True):
         print("Did it hit? (y/n)")
         hit = input()
 
-        if(hit == 'yes' or hit == 'y'):
+        if(hit == 'yes' or hit == 'y' or hit == "Y"):
             print("Damage Total = " + str(attack()))
 
-        if (hit == 'no' or hit == 'n'):
+        if (hit == 'no' or hit == 'n' or hit == 'N'):
             print("You missed!")
 
-    if(prompt == 'no' or prompt == 'n'):
+    if(prompt == 'no' or prompt == 'n' or prompt == "N"):
         print("Combat done")
         continue
