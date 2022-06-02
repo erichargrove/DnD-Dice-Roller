@@ -1,3 +1,11 @@
+"""
+DnD Dice Roller
+
+Author: Eric Hargrove
+Date Created: 6/1/21
+Last Modified: 6/2/21
+"""
+
 import random
 
 d4 = 4
