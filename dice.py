@@ -51,7 +51,7 @@ while(True):
         print("d20 roll = " + str(initRoll))
 
         if(initRoll == 20):
-            print(Fore.RED + "CRITICAL!!!" + Style.RESET_ALL)
+            print(Fore.RED + "CRITICAL HIT!!!" + Style.RESET_ALL)
             critDamage = attack() * 2
             print("Damage Total = " + str(critDamage))
             continue
