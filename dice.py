@@ -34,7 +34,7 @@ def critFail():
 prompt = ''
 
 while(True):
-    print("Want to attack?")
+    print("Want to attack? (y/n)")
     prompt = input()
 
     if(prompt == 'yes' or prompt == 'y'):
@@ -54,7 +54,7 @@ while(True):
         atkRoll = initRoll + int(strMod) + int(profBonus)
         print("Attack roll = " + str(atkRoll))
 
-        print("Did it hit?")
+        print("Did it hit? (y/n)")
         hit = input()
 
         if(hit == 'yes' or hit == 'y'):
