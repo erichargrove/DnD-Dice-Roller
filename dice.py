@@ -60,6 +60,9 @@ while(True):
         if(hit == 'yes' or hit == 'y'):
             print("Damage Total = " + str(attack()))
 
+        if (hit == 'no' or hit == 'n'):
+            print("You missed!")
+
     if(prompt == 'no' or prompt == 'n'):
         print("Combat done")
         continue
