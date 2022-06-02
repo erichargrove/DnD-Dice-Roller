@@ -7,6 +7,7 @@ Last Modified: 6/2/21
 """
 
 import random
+from colorama import Fore, Style
 
 d4 = 4
 d6 = 6
@@ -18,7 +19,7 @@ d20 = 20
 print("Attack dice? 4 = d4, 6 = d6, etc.")
 atkDice = input()
 
-print("What's your strength modifier?")
+print("What's your strength modifier?" + Style.RESET_ALL)
 strMod = input()
 
 print("What's your proficiency bonus?")
@@ -37,7 +38,7 @@ def attack():
     return 1 * roll + int(strMod)
 
 def critFail():
-    print("Crit Fail!")
+    print(Fore.RED + "Crit Fail!" + Style.RESET_ALL)
 
 prompt = ''
 
@@ -50,7 +51,7 @@ while(True):
         print("d20 roll = " + str(initRoll))
 
         if(initRoll == 20):
-            print("CRITICAL!!!")
+            print(Fore.RED + "CRITICAL!!!" + Style.RESET_ALL)
             critDamage = attack() * 2
             print("Damage Total = " + str(critDamage))
             continue
