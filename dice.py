@@ -8,6 +8,7 @@ Last Modified: 6/2/21
 
 import random
 from colorama import Fore, Back, Style
+import re
 
 d4 = 4
 d6 = 6
@@ -72,6 +73,6 @@ while(True):
         if (hit == 'no' or hit == 'n' or hit == 'N'):
             print("You missed!")
 
-    if(prompt == 'no' or prompt == 'n' or prompt == "N"):
+    if(re.match("[Nn]?", prompt)):
         print("Combat done")
         continue
