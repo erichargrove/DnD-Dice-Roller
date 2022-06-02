@@ -7,7 +7,7 @@ Last Modified: 6/2/21
 """
 
 import random
-from colorama import Fore, Style
+from colorama import Fore, Back, Style
 
 d4 = 4
 d6 = 6
@@ -51,7 +51,7 @@ while(True):
         print("d20 roll = " + str(initRoll))
 
         if(initRoll == 20):
-            print(Fore.RED + "CRITICAL HIT!!!" + Style.RESET_ALL)
+            print(Fore.GREEN + "CRITICAL HIT!!!" + Style.RESET_ALL)
             critDamage = attack() * 2
             print("Damage Total = " + str(critDamage))
             continue
