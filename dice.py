@@ -47,17 +47,17 @@ while(True):
     print("Want to attack? (y/n)")
     prompt = input()
 
-    if(re.match("^[Yy]{1}$", prompt)):
+    if (re.match("^[Yy]{1}$", prompt)):
         initRoll = random.randint(1, d20)
         print("d20 roll = " + str(initRoll))
 
-        if(initRoll == 20):
+        if (initRoll == 20):
             print(Fore.GREEN + "CRITICAL HIT!!!" + Style.RESET_ALL)
             critDamage = attack() * 2
             print("Damage Total = " + str(critDamage))
             continue
 
-        if(initRoll == 1):
+        if (initRoll == 1):
             critFail()
             continue
 
@@ -80,7 +80,7 @@ while(True):
 
         attackRoll()
 
-    elif(re.match("^[Nn]{1}$", prompt)):
+    elif (re.match("^[Nn]{1}$", prompt)):
         print("Combat done")
         continue
     else:
