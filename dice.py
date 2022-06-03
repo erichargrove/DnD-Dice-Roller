@@ -39,7 +39,7 @@ def attack():
     return 1 * roll + int(strMod)
 
 def critFail():
-    print(Fore.RED + "Crit Fail!" + Style.RESET_ALL)
+    print(Fore.BLACK + Back.RED + "Crit Fail!" + Style.RESET_ALL)
 
 prompt = ''
 
@@ -47,7 +47,7 @@ while(True):
     print("Want to attack? (y/n)")
     prompt = input()
 
-    if(prompt == 'yes' or prompt == 'y' or prompt == "Y"):
+    if(re.match("^[Yy]{1}$", prompt)):
         initRoll = random.randint(1, d20)
         print("d20 roll = " + str(initRoll))
 
@@ -67,12 +67,18 @@ while(True):
         print("Did it hit? (y/n)")
         hit = input()
 
-        if(hit == 'yes' or hit == 'y' or hit == "Y"):
+        if(re.match("^[Yy]{1}$", hit) or re.match("(yes|Yes)", hit)):
             print("Damage Total = " + str(attack()))
 
-        if (hit == 'no' or hit == 'n' or hit == 'N'):
+        elif (re.match("^[Nn]{1}$", hit)):
             print("You missed!")
 
-    if(re.match("[Nn]?", prompt)):
+        else:
+            print("Invalid input")
+            continue
+
+    elif(re.match("^[Nn]{1}$", prompt)):
         print("Combat done")
         continue
+    else:
+        print("Invalid input")
