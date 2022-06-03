@@ -61,21 +61,24 @@ while(True):
             critFail()
             continue
 
-        atkRoll = initRoll + int(strMod) + int(profBonus)
-        print("Attack roll = " + str(atkRoll))
+        def attackRoll():
+            atkRoll = initRoll + int(strMod) + int(profBonus)
+            print("Attack roll = " + str(atkRoll))
 
-        print("Did it hit? (y/n)")
-        hit = input()
+            print("Did it hit? (y/n)")
+            hit = input()
 
-        if(re.match("^[Yy]{1}$", hit) or re.match("(yes|Yes)", hit)):
-            print("Damage Total = " + str(attack()))
+            if(re.match("^[Yy]{1}$", hit) or re.match("(yes|Yes)", hit)):
+                print("Damage Total = " + str(attack()))
 
-        elif (re.match("^[Nn]{1}$", hit)):
-            print("You missed!")
+            elif (re.match("^[Nn]{1}$", hit)):
+                print("You missed!")
 
-        else:
-            print("Invalid input")
-            continue
+            else:
+                print("Invalid input")
+                attackRoll()
+
+        attackRoll()
 
     elif(re.match("^[Nn]{1}$", prompt)):
         print("Combat done")
