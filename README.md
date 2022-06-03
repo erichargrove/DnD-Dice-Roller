@@ -1,4 +1,4 @@
-# DnD-Dice-Roller
+# DnD Dice Roller
 
 This is a quick DnD dice rolling app that I made while bored. Would like to add more features in the future, and maybe a GUI.
 
