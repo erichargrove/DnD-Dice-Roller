@@ -29,9 +29,11 @@ profBonus = input()
 print("What's your initiative modifier?")
 initMod = input()
 
+print("")
 print("Roll for initiative!")
 initiative = random.randint(1, d20) + int(initMod)
 print("Initiative = " + str(initiative))
+print("")
 
 def attack():
     roll = random.randint(1, int(atkDice))
@@ -55,6 +57,7 @@ while(True):
             print(Fore.GREEN + "CRITICAL HIT!!!" + Style.RESET_ALL)
             critDamage = attack() * 2
             print("Damage Total = " + str(critDamage))
+            print("")
             continue
 
         if(initRoll == 1):
@@ -64,18 +67,22 @@ while(True):
         def attackRoll():
             atkRoll = initRoll + int(strMod) + int(profBonus)
             print("Attack roll = " + str(atkRoll))
+            print("")
 
             print("Did it hit? (y/n)")
             hit = input()
 
             if(re.match("^[Yy]{1}$", hit)):
                 print("Damage Total = " + str(attack()))
+                print("")
 
             elif (re.match("^[Nn]{1}$", hit)):
                 print("You missed!")
+                print("")
 
             else:
                 print("Invalid input")
+                print("")
                 attackRoll()
 
         attackRoll()
