@@ -68,7 +68,7 @@ while(True):
             print("Did it hit? (y/n)")
             hit = input()
 
-            if(re.match("^[Yy]{1}$", hit) or re.match("(yes|Yes)", hit)):
+            if(re.match("^[Yy]{1}$", hit)):
                 print("Damage Total = " + str(attack()))
 
             elif (re.match("^[Nn]{1}$", hit)):
