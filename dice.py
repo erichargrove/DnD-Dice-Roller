@@ -32,8 +32,7 @@ initMod = input()
 print("")
 print("Roll for initiative!")
 initiative = random.randint(1, d20) + int(initMod)
-print("Initiative = " + str(initiative))
-print("")
+print("Initiative = " + str(initiative) + "\n")
 
 def attack():
     roll = random.randint(1, int(atkDice))
@@ -56,8 +55,7 @@ while(True):
         if (initRoll == 20):
             print(Fore.GREEN + "CRITICAL HIT!!!" + Style.RESET_ALL)
             critDamage = attack() * 2
-            print("Damage Total = " + str(critDamage))
-            print("")
+            print("Damage Total = " + str(critDamage) + "\n")
             continue
 
         if (initRoll == 1):
@@ -66,29 +64,25 @@ while(True):
 
         def attackRoll():
             atkRoll = initRoll + int(strMod) + int(profBonus)
-            print("Attack roll = " + str(atkRoll))
-            print("")
+            print("Attack roll = " + str(atkRoll) + "\n")
 
             print("Did it hit? (y/n)")
             hit = input()
 
             if(re.match("^[Yy]{1}$", hit)):
-                print("Damage Total = " + str(attack()))
-                print("")
+                print("Damage Total = " + str(attack()) + "\n")
 
             elif (re.match("^[Nn]{1}$", hit)):
-                print("You missed!")
-                print("")
+                print("You missed!" + "\n")
 
             else:
-                print("Invalid input")
-                print("")
+                print("Invalid input" + "\n")
                 attackRoll()
 
         attackRoll()
 
     elif (re.match("^[Nn]{1}$", prompt)):
-        print("Combat done")
+        print("Combat done" + "\n")
         continue
     else:
-        print("Invalid input")
+        print("Invalid input" + "\n")
